@@ -17,7 +17,7 @@ samplerate = 16000
 duration = 7  
 channels = 1
 
-print("\n🎤 Speak in English or French.\n")
+print("\nspeak in English or French.\n")
 print("⏳ Preparing microphone...")
 sd.rec(1, samplerate=samplerate, channels=channels)
 sd.wait()
@@ -40,12 +40,12 @@ try:
                 print(translated, "\n")
             elif detected_lang == "fr":
                 translated = GoogleTranslator(source="fr", target="en").translate(text)
-                print("🧠 Français:", text)
-                print("📝 In English:", translated, "\n")
+                print("français:", text)
+                print("english:", translated, "\n")
             else:
-                print(f"⚠️ Detected unsupported language: {detected_lang}")
+                print(f"detected unsupported language: {detected_lang}")
 
         os.remove(audio_path)
 
 except KeyboardInterrupt:
-    print("\n🛑 Translation stopped. Goodbye!")
+    print("\ntranslation stopped. Goodbye!")
